@@ -1,5 +1,6 @@
 schema {
     query : Query
+    mutation: Mutation
 }
 
 type Developer {
@@ -21,4 +22,8 @@ type Query {
     getAllDevelopers:[Developer]
     getDevelopersOnLevel(level: String):[Developer]
     getAllProjectTeams:[ProjectTeam]
+}
+
+type Mutation {
+    updateLevel(id:ID, level:String) : Developer
 }
