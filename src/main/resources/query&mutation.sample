@@ -1,3 +1,7 @@
+------------------------------
+# Query
+------------------------------
+
 query {
   getAllDevelopers {
     id
@@ -15,6 +19,10 @@ query {
     level
   }
 }
+
+------------------------------
+# Mutation
+------------------------------
 
 mutation {
   updateLevel(id: 1, level: "L4") {
@@ -46,6 +54,39 @@ mutation($input: LevelInput) {
   }
 }
 
+------------------------------
+# Subsription
+------------------------------
+
+# 1. Open localhost:8080/graphql in two tabs in your browser
+# 2. In first tab we run subscription please see below
+
+subscription{
+  onDeveloperUpdate(developerId: 1) {
+    id
+    projectId
+    name
+    surname
+    level
+    projectTeam {
+      projectName
+      country
+    }
+  }
+}
+
+# 3. In second tab we will run mutation to update level developer please see below
+
+mutation {
+  updateLevel(id: 1, level: "L4") {
+     id
+    name
+    surname
+    level
+  }
+}
+
+# 4. When run mutation to updateLevel in the first tab we can see result in real time
 
 
 

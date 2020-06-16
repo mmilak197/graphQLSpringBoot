@@ -1,6 +1,7 @@
 schema {
-    query : Query
-    mutation: Mutation
+    query : Query,
+    mutation: Mutation,
+    subscription: Subscription
 }
 
 type Developer {
@@ -32,4 +33,8 @@ type Query {
 type Mutation {
     updateLevel(id:ID, level:String) : Developer
     updateLevelByInputObject(input : LevelInput): Developer
+}
+
+type Subscription {
+    onDeveloperUpdate(developerId : ID): Developer
 }

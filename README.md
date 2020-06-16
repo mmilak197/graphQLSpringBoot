@@ -1,1 +1,1 @@
-Simple project use GraphQL and Spring Boot
+# Simple project use GraphQL and Spring Boot
