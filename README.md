@@ -1,0 +1,1 @@
+Simple project use GraphQL and Spring Boot

@@ -1,0 +1,22 @@
+schema {
+    query : Query
+}
+
+type Developer {
+    id : ID!,
+    name : String,
+    surname : String,
+    level : String
+}
+
+type ProjectTeam {
+    id : ID!,
+    projectName : String,
+    country : String
+}
+
+type Query {
+    getAllDevelopers:[Developer]
+    getDevelopersOnLevel(level: String):[Developer]
+    getAllProjectTeams:[ProjectTeam]
+}
