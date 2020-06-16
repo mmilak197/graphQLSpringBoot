@@ -18,6 +18,11 @@ type ProjectTeam {
     country : String
 }
 
+input LevelInput {
+    developerId : ID!,
+    level : String
+}
+
 type Query {
     getAllDevelopers:[Developer]
     getDevelopersOnLevel(level: String):[Developer]
@@ -26,4 +31,5 @@ type Query {
 
 type Mutation {
     updateLevel(id:ID, level:String) : Developer
+    updateLevelByInputObject(input : LevelInput): Developer
 }

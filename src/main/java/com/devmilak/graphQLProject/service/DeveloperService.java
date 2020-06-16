@@ -3,6 +3,7 @@ package com.devmilak.graphQLProject.service;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.coxautodev.graphql.tools.GraphQLResolver;
+import com.devmilak.graphQLProject.inputModel.LevelInput;
 import com.devmilak.graphQLProject.model.Developer;
 import com.devmilak.graphQLProject.repository.DeveloperRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,14 @@ public class DeveloperService implements GraphQLQueryResolver, GraphQLMutationRe
          developerRepository.save(developer);
 
          return developer;
+    }
+
+    @Transactional
+    public Developer updateLevelByInputObject(final LevelInput levelInput) {
+        var developer = developerRepository.findById(levelInput.getDeveloperId()).get();
+        developer.setLevel(levelInput.getLevel());
+        developerRepository.save(developer);
+
+        return developer;
     }
 }

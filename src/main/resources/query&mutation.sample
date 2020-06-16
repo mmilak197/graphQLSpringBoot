@@ -25,6 +25,27 @@ mutation {
   }
 }
 
+# get value from object send to mutation ex. by frontend
+# if you want send object like this go to localhost:8080/graphiql
+# next expand tab "Query Variables" by left-bottom side and create object
+# sample create object is present below
+{
+  "input": {
+    "developerId": 1,
+    "level": "L3"
+  }
+}
+
+# LevelInput object create above
+mutation($input: LevelInput) {
+  updateLevelByInputObject(input: $input) {
+    id
+    name
+    surname
+    level
+  }
+}
+
 
 
 
