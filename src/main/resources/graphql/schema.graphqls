@@ -4,9 +4,11 @@ schema {
 
 type Developer {
     id : ID!,
+    projectId : ID!,
     name : String,
     surname : String,
-    level : String
+    level : String,
+    projectTeam : ProjectTeam
 }
 
 type ProjectTeam {

@@ -20,6 +20,7 @@ public class Developer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Long projectId;
     private String name;
     private String surname;
     private String level;
