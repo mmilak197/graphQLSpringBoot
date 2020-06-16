@@ -1,0 +1,31 @@
+query {
+  getAllDevelopers {
+    id
+    projectId
+    name
+    surname
+    level
+  }
+}
+
+query {
+  getDevelopersOnLevel(level: "L4") {
+    name
+    surname
+    level
+  }
+}
+
+mutation {
+  updateLevel(id: 1, level: "L4") {
+     id
+    name
+    surname
+    level
+  }
+}
+
+
+
+
+
